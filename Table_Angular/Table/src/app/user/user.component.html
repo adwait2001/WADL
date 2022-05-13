@@ -35,3 +35,15 @@
 
   <hr/>
 
+
+
+  <span *ngFor="let value3 of matrix3;index as i">
+    <span *ngIf="isDone3(value3,i)">
+        {{value3}}
+    </span>
+    <span *ngIf="!isDone3(value3,i)">
+      {{value3}}
+      <br/>
+    </span>
+
+  </span>

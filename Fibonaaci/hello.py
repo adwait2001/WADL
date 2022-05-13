@@ -2,20 +2,15 @@ import webapp2
 
 class MainPage(webapp2.RequestHandler):
      def get(self):
-          def recur_fibo(n):
-                if n <= 1:
-                     return n
-                else:
-                    return(recur_fibo(n-1) + recur_fibo(n-2))
-
-          nterms = 8
-          if nterms <= 0:
-                self.response.write("Plese enter a positive integer")
-          else:
-                self.response.write("Fibonacci sequence:")
-                for i in range(nterms):
-                     self.response.write(recur_fibo(i))
-        
-app = webapp2.WSGIApplication([('/',MainPage),
-			       ],
-                               debug=True)
+          def recur_fibonaaci(n):
+               if n<=1:
+                    return n
+               else:
+                    return recur_fibonaaci(n-1) + recur_fibonaaci(n-2)
+     
+          Maxterms=10;
+          for i in range(1,Maxterms+1):
+               self.response.write(recur_fibonaaci(i))
+               self.response.write('<br/>')
+          
+app = webapp2.WSGIApplication([('/',MainPage)],debug=True)

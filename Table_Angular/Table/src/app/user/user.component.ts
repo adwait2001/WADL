@@ -29,6 +29,20 @@ export class UserComponent implements OnInit {
         this.matrix2.push(j+y1)
       }
 
+      let j = 0;
+      let k = 0;
+
+      if(x==y)
+      {
+        while (j!=x*x && k!=y*y) {
+          let var1 = this.matrix1[j];
+          let var2 = this.matrix2[k];
+          this.matrix3.push(Number(var1)*Number(var2));
+          j=j+1;
+          k=k+1;
+        }
+      }
+
 
 
   }
@@ -55,6 +69,17 @@ export class UserComponent implements OnInit {
     return true;
   }
 
+  isDone3=(value3 : any , index : any)=>{
+    var l1 = this.value2.split('#')
+    var x = parseInt(l1[0])
+    var y = parseInt(l1[2])
+    var l = this.matrix1[index];
+    if((Number(value3)/Number(l)-x+(x-y))%x==x-1)
+    {
+      return false;
+    }
+    return true;
+  }
 
   ngOnInit(): void {
   }

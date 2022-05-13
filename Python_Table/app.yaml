@@ -4,4 +4,4 @@ api_version: 1
 
 handlers:
 - url: /.*
-  script: hello.app
+  script: main.app
